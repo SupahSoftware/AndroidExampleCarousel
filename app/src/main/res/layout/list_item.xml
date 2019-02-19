@@ -4,9 +4,9 @@
     android:layout_height="wrap_content"
     android:layout_margin="24dp"
     android:paddingStart="24dp"
-    android:paddingTop="24dp"
+    android:paddingTop="64dp"
     android:paddingEnd="24dp"
-    android:paddingBottom="24dp">
+    android:paddingBottom="64dp">
 
     <ImageView
         android:id="@+id/list_item_background"

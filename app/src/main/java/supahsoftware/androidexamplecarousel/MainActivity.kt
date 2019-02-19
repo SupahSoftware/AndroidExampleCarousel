@@ -3,8 +3,6 @@ package supahsoftware.androidexamplecarousel
 import android.os.Bundle
 import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -22,8 +20,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        item_list.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
-        item_list.adapter = itemAdapter
+        item_list.initialize(itemAdapter)
+        item_list.setViewsToChangeColor(listOf(R.id.list_item_background, R.id.list_item_text))
         itemAdapter.setItems(getLargeListOfItems())
     }
 

@@ -1,13 +1,18 @@
 package supahsoftware.androidexamplecarousel
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val itemAdapter by lazy { ItemAdapter() }
+    private val itemAdapter by lazy {
+        ItemAdapter { position: Int, item: Item ->
+            Toast.makeText(this@MainActivity, "Pos ${position}", Toast.LENGTH_LONG).show()
+            item_list.smoothScrollToPosition(position)
+        } }
     private val possibleItems = listOf(
         Item("Airplanes", R.drawable.ic_airplane),
         Item("Cars", R.drawable.ic_car),

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearSnapHelper
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +28,8 @@ class MainActivity : AppCompatActivity() {
 
         item_list.initialize(itemAdapter)
         item_list.setViewsToChangeColor(listOf(R.id.list_item_background, R.id.list_item_text))
+        val snapHelper=LinearSnapHelper()
+        snapHelper.attachToRecyclerView(item_list)
         itemAdapter.setItems(getLargeListOfItems())
     }
 
